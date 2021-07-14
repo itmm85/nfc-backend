@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "establishments",
+  "info": {
+    "name": "Establishments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "establishment_email": {
+      "type": "email"
+    },
+    "brand": {
+      "model": "brand",
+      "via": "establishments"
+    }
+  }
+}
